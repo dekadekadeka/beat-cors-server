@@ -1,14 +1,17 @@
 const express = require('express');
 const request = require('request');
+const serverless = require('serverless-http')
 
 const app = express();
+
+const router = express.Router();
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
 
-app.get('/schedule', (req, res) => {
+router.get('/', (req, res) => {
   request(
     { url: 'http://developer.itsmarta.com/RealtimeTrain/RestServiceNextTrain/GetRealtimeArrivals?apikey=aa224864-8131-4464-aab9-49aaf1288834' },
     (error, response, body) => {
@@ -20,6 +23,10 @@ app.get('/schedule', (req, res) => {
     }
   )
 });
+
+app.use('/.netlify/functions/stations', router)
+
+module.exports.handler = serverless(app);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
