@@ -1,5 +1,7 @@
 All credit goes to [David Katz](https://github.com/15Dkatz/beat-cors-server) - Thank you very much!
 
+I had to configure this to work with Netlify, the instructions to do that are [here.](https://dev.to/owenconti/how-to-deploy-express-js-apps-on-netlify-4alh)
+
 ## Beat Cors Server
 This project is an example of how to set up a proxy server to help frontends running in the browser beat the same origin policy.
 
