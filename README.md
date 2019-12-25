@@ -1,3 +1,5 @@
+All credit goes to [David Katz](https://github.com/15Dkatz/beat-cors-server) - Thank you very much!
+
 ## Beat Cors Server
 This project is an example of how to set up a proxy server to help frontends running in the browser beat the same origin policy.
 
