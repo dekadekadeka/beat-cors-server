@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e69e1675-8e9b-4d2f-b5a9-0eac349f8085/deploy-status)](https://app.netlify.com/sites/delicious-cobb/deploys)
+
 All credit goes to [David Katz](https://github.com/15Dkatz/beat-cors-server) - Thank you very much!
 
 I had to configure this to work with Netlify, the instructions to do that are [here.](https://dev.to/owenconti/how-to-deploy-express-js-apps-on-netlify-4alh)
