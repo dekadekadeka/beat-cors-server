@@ -1,6 +1,7 @@
 const express = require('express');
 const request = require('request');
-const serverless = require('serverless-http')
+const serverless = require('serverless-http');
+require('dotenv').config();
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.use((req, res, next) => {
 
 router.get('/', (req, res) => {
   request(
-    { url: 'http://developer.itsmarta.com/RealtimeTrain/RestServiceNextTrain/GetRealtimeArrivals?apikey=aa224864-8131-4464-aab9-49aaf1288834' },
+    { url: `http://developer.itsmarta.com/RealtimeTrain/RestServiceNextTrain/GetRealtimeArrivals?apikey=${process.env.MARTA_API}`},
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: err.message });
