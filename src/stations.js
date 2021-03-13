@@ -15,9 +15,9 @@ app.use((req, res, next) => {
 router.get('/', (req, res) => {
   request(
     { url: `http://developer.itsmarta.com/RealtimeTrain/RestServiceNextTrain/GetRealtimeArrivals?apikey=${process.env.MARTA_API}`},
-    (error, response, body) => {
-      if (error || response.statusCode !== 200) {
-        return res.status(500).json({ type: 'error', message: err.message });
+    (err, response, body) => {
+      if (err || response.statusCode !== 200) {
+        return res.status(500).json({ type: 'error', message: 'Sorry but there has been an error!' });
       }
 
       res.json(JSON.parse(body));
